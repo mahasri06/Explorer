@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the breathtaking beauty of North India with detailed insights into its major attractions, places, and travel information.">
+    <title>Explorer</title>
+    <style>
+        /* General body styling */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header styling */
+        header {
+            background: #333;
+            color: #fff;
+            padding: 0.5em 1em;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px; /* Added height for header */
+        }
+
+        .header-title {
+            flex: 1;
+            text-align: left;
+        }
+
+        nav {
+            flex: 1;
+            text-align: right;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 1em;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Main content area */
+        main {
+            margin-top: 80px; /* Adjusted margin to ensure enough space */
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Banner section */
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('panorama.jpg');
+            background-size: cover;
+            background-position: center;
+            margin-top: 20px; /* Margin to ensure spacing from header */
+        }
+
+        .banner img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Banner text */
+        .banner-text {
+            position: relative;
+            color: #cff5bc;
+            text-align: center;
+            z-index: 1;
+            max-width: 90%;
+            padding: 0 1em;
+            box-sizing: border-box;
+        }
+
+        .banner-text h1 {
+            margin: 0;
+            font-size: 2.5em;
+            line-height: 1.2;
+        }
+
+        .banner-text p {
+            font-size: 1.2em;
+            line-height: 1.4;
+        }
+
+        /* Section styling */
+        section {
+            padding: 2em 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        section h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.5em;
+        }
+
+        /* Projects container */
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .inline-block-element {
+            flex: 1 1 calc(50% - 20px);
+            box-sizing: border-box;
+            background-color: #bbb;
+            transition: background-color 0.3s ease;
+            padding: 10px;
+        }
+
+        .inline-block-element:hover {
+            background-color: #ddd;
+        }
+
+        /* Image styling */
+        img {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+            display: block;
+            margin-bottom: 1em;
+        }
+
+        /* Footer styling */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 0.5em 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Hidden content and button styling */
+        .hidden-content {
+            display: none;
+            margin-top: 1em;
+        }
+
+        .read-more-btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 0.5em 1em;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+            type: button;
+        }
+
+        .read-more-btn:hover {
+            background-color: #555;
+        }
+
+        /* Contact details styling */
+        .contact-details {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 1em;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-details p {
+            margin: 0.5em 0;
+        }
+
+        .contact-details strong {
+            color: #333;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 1em;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form label {
+            margin-bottom: 0.5em;
+            font-weight: bold;
+        }
+
+        .contact-form input, .contact-form select, .contact-form textarea {
+            padding: 0.5em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 0.7em 1.2em;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+            align-self: flex-start;
+        }
+
+        .submit-btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-title">
+            <h1>Explorer</h1>
+        </div>
+        <nav>
+            <h1>
+            <a href="#about">Home</a>
+            <a href="#projects">Places</a>
+            <a href="#contact">Restaurants</a>
+            </h1>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="banner">
+            <img src="panorama.jpg" alt="Scenic view of North India">
+            <div class="banner-text">
+                <h1>Explore the Beauty of North India</h1>
+                <p>North India is renowned for its breathtaking landscapes and diverse natural beauty. From the majestic Himalayas to serene valleys and vibrant wildlife, there are countless natural wonders to explore. Whether you're seeking adventure or tranquility, North India's nature offers something for every traveler. Discover lush forests, sparkling rivers, and stunning mountain views that make this region a top destination for tourism.</p>
+            </div>
+        </div>
+
+        <section id="projects">
+            <h2>Places</h2>
+            <div class="projects-container">
+                <div class="inline-block-element">
+                    <h3>Kullu and Manali, Himachal Pradesh</h3>
+                    <img src="Manali.webp" alt="Scenic view of Kullu and Manali">
+                    <p>Blessed with verdant greenery, pristine streams, meadows blooming...</p>
+                    <div class="hidden-content">
+                        <p>With flowers, and pleasant climate, the twin towns of Kullu and Manali in Himachal Pradesh are among the most visited hill stations in North India. These towns, which are at a distance of about 40 km, are dotted with waterfalls, trekking trails, apple orchards, religious places, quaint villages, museums, and hip cafes, among others. While Kullu and Manali draw in a large number of couples, they are also a favorite with adventure seekers looking to indulge in trekking, paragliding, camping, river rafting, etc.</p>
+                    </div>
+                    <button class="read-more-btn" onclick="toggleContent(this)">Read More</button>
+                </div>
+                <div class="inline-block-element">
+                    <h3>Mussoorie and Dehradun, Uttarakhand</h3>
+                    <img src="uttarkand.jpeg" alt="Scenic view of Mussoorie and Dehradun">
+                    <p>The tree-covered hills and valleys of Dehradun...</p>
+                    <div class="hidden-content">
+                        <p>And Mussoorie have attracted families and couples since the 1800s. Offering stunning views of Dehradun on one side and snow-capped Himalayan peaks on the other, the British rightly called Mussoorie, The Queen of Hill Stations. Located merely 33 km apart, these hills are also popular with trekkers. In addition to their natural beauty, Dehradun and Mussoorie boast of a number of institutions, churches, and summer palaces from the British-raj era.</p>
+                    </div>
+                    <button class="read-more-btn" onclick="toggleContent(this)">Read More</button>
+                </div>
+                <div class="inline-block-element">
+                    <h3>Dalhousie, Himachal Pradesh</h3>
+                    <img src="Khajjiar.webp" alt="Scenic view of Dalhousie">
+                    <p>Surrounded by snow-capped hills in the winter and pine-clad...</p>
+                    <div class="hidden-content">
+                        <p>Valleys in the summer, Dalhousie is a nature lover’s paradise. Apart from honeymooners and families, this is one of the popular tourist places for solo travelers in North India. Sprawled across 5 hills and valleys, Dalhousie has many bungalows, churches, and cottages that date back to the British era. It abounds in natural beauty and boasts of picturesque waterfalls, trekking routes, lakes, dams and a wildlife sanctuary that houses over 100 rare species of birds and animals.</p>
+                    </div>
+                    <button class="read-more-btn" onclick="toggleContent(this)">Read More</button>
+                </div>
+                <div class="inline-block-element">
+                    <h3>Jaisalmer, Rajasthan</h3>
+                    <img src="Jaisalmer, Rajasthan.jpeg" alt="Golden dunes of Jaisalmer">
+                    <p>The golden dunes of Jaisalmer give it the moniker- the Golden city...</p>
+                    <div class="hidden-content">
+                        <p>The desert in itself is mesmerizing and stretches over thousands of kilometers. The Desert National Park is one of the few places in India to spot the endangered Indian bustard. Jaisalmer flaunts its rich past with Havelis, cenotaphs, and ornate forts. It is also home to many magnificent Hindu and Jain temples. Apart from its visual beauty, a camel ride across the Jaisalmer desert is a unique treat and an unforgettable experience.</p>
+                    </div>
+                    <button class="read-more-btn" onclick="toggleContent(this)">Read More</button>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form action="https://example.com/submit" method="post" class="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+        
+                <label for="home-town">Home Town:</label>
+                <input type="text" id="home-town" name="home-town" required>
+        
+                <label for="destination">Destination:</label>
+                <select id="destination" name="destination" required>
+                    <option value="" disabled selected>Choose a destination</option>
+                    <option value="north-india">North India</option>
+                    <option value="south-india">South India</option>
+                    <option value="east-india">East India</option>
+                    <option value="west-india">West India</option>
+                </select>
+        
+                <label for="contact-number">Contact Number:</label>
+                <input type="tel" id="contact-number" name="contact-number" pattern="[0-9]{10}" required>
+        
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+        
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Explorer. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleContent(button) {
+            var content = button.previousElementSibling;
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+                button.textContent = "Read Less";
+            } else {
+                content.style.display = "none";
+                button.textContent = "Read More";
+            }
+        }
+    </script>
+</body>
+</html>
